@@ -1,0 +1,12 @@
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix m: <http://www.semanticweb.org/ontologies/2020/2/Mammal#>
+
+#Select Everything
+#SELECT * {?subject ?predicate ?object}
+
+#SELECT All subclasses of Development
+#SELECT ?class	where { ?class rdfs:subClassOf m:Development }
+
+#SELECT All Carnivors
+SELECT *	where { ?Diet m:hasDiet m:Carnivore }
