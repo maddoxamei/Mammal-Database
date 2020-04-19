@@ -35,9 +35,14 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Diet -->
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Consumes -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Diet"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Consumes">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Development"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Development"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Diet"/>
+    </owl:ObjectProperty>
     
 
 
@@ -46,12 +51,6 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Kingdom">
         <rdfs:comment>TODO: FINISH</rdfs:comment>
     </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Life_Span -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Life_Span"/>
     
 
 
@@ -67,15 +66,12 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Mating_Season -->
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#MatesDuring -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Mating_Season"/>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Reproduction -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Reproduction"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#MatesDuring">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Development"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#MatingSeason"/>
+    </owl:ObjectProperty>
     
 
 
@@ -83,6 +79,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Social">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Behavior"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Development"/>
     </owl:ObjectProperty>
     
 
@@ -132,17 +129,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#hasDiet -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#hasDiet">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Diet"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#isDietOf"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Development"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Diet"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#hasFamily -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#hasFamily">
@@ -151,16 +137,6 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Primates"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Haplorhini"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Strepsirrhini"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#hasLifeSpan -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#hasLifeSpan">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Life_Span"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#isLifeSpanOf"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Development"/>
     </owl:ObjectProperty>
     
 
@@ -189,18 +165,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#hasMatingSeason -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#hasMatingSeason">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Mating_Season"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#isMatingSeasonOf"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Development"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Mating_Season"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#hasOrder -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#hasOrder">
@@ -214,13 +178,12 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#hasReproductionMethod -->
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#hasRegion -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#hasReproductionMethod">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Reproduction"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#isReproductionMethodOf"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#hasRegion">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Location"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Development"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Reproduction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Region"/>
     </owl:ObjectProperty>
     
 
@@ -288,16 +251,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#isDietOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#isDietOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Diet"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Diet"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Development"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#isFamilyOf -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#isFamilyOf">
@@ -306,15 +259,6 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Haplorhini"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Strepsirrhini"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Primates"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#isLifeSpanOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#isLifeSpanOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Life_Span"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Development"/>
     </owl:ObjectProperty>
     
 
@@ -340,17 +284,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#isMatingSeasonOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#isMatingSeasonOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Mating_Season"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Mating_Season"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Development"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#isOrderOf -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#isOrderOf">
@@ -364,11 +297,11 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#isReproductionMethodOf -->
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#isRegionOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#isReproductionMethodOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Reproduction"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Reproduction"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#isRegionOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Location"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Region"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Development"/>
     </owl:ObjectProperty>
     
@@ -405,6 +338,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#CommonName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#CommonName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Development"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Cosmopolitan -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cosmopolitan">
@@ -413,18 +355,18 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#LifeExpectancy -->
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Lifespan -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#LifeExpectancy">
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Lifespan">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Development"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#LifeSpan -->
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#LitterSize -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#LifeSpan">
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#LitterSize">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Development"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
     </owl:DatatypeProperty>
@@ -441,19 +383,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Species -->
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Social -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Species">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Development"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Venomous -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Venomous">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Development"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Social">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:DatatypeProperty>
     
@@ -651,9 +583,9 @@ brackish water</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Mating_Season -->
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#MatingSeason -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Mating_Season"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#MatingSeason"/>
     
 
 
@@ -737,9 +669,11 @@ Family Tachyglossidae, spiny anteaters)</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Reproduction -->
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Region -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Reproduction"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Region">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Location"/>
+    </owl:Class>
     
 
 
@@ -845,10 +779,14 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Aardvark">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Tubulidentata"/>
-        <hasDiet rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivore"/>
-        <LifeExpectancy rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">23</LifeExpectancy>
-        <LifeSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">18</LifeSpan>
-        <Species rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aardvark</Species>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivorous"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#April"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#May"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aardvark</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">23</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
     </owl:NamedIndividual>
     
 
@@ -861,12 +799,74 @@ icecap</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#African_Elephant -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#African_Elephant">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Proboscidea"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Herbivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">African Elephant</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">60</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Population rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">700000</Population>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#African_Lion -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#African_Lion">
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Antelope"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivore"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Elk"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">African Lion</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">15</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">2</LitterSize>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">3</LitterSize>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">4</LitterSize>
+        <Population rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">30000</Population>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Anteater -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Anteater">
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivorous"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#April"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#March"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#May"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anteater</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">14</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Antelope -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Antelope">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Artiodactyla"/>
-        <hasDiet rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Herbivore"/>
-        <LifeSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">20</LifeSpan>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Herbivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#September"/>
+        <CommonName>Antelope</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">20</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#April -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#April">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#MatingSeason"/>
     </owl:NamedIndividual>
     
 
@@ -875,6 +875,40 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Armadillo">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Xenarthra"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivorous"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#August"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#December"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#January"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#July"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#November"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Armadillo</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Asian_Elephant -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Asian_Elephant">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Proboscidea"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Herbivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Asian Elephant</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">60</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Population rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">50000</Population>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#August -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#August">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#MatingSeason"/>
     </owl:NamedIndividual>
     
 
@@ -883,15 +917,15 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Bat">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Chiroptera"/>
-        <LifeSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">30</LifeSpan>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Bear -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Bear">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivora"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Frugivore"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivorous"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Flies"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#August"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#September"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bat</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">30</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
     </owl:NamedIndividual>
     
 
@@ -900,6 +934,17 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Camel">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Artiodactyla"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Herbivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#December"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#February"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#January"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#March"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#November"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camel</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">40</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
     </owl:NamedIndividual>
     
 
@@ -908,14 +953,6 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivore">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Diet"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Cat -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cat">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivora"/>
     </owl:NamedIndividual>
     
 
@@ -932,6 +969,26 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Chimpanzee">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Hominodea"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Frugivore"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivorous"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Omnivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Scansorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#April"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#August"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#December"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#February"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#January"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#July"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#June"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#March"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#May"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#November"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#October"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#September"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chimpanzee</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">35</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
     </owl:NamedIndividual>
     
 
@@ -952,18 +1009,11 @@ icecap</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Cow -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cow">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Artiodactyla"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Locomotion"/>
+        <rdfs:comment>Having limbs adapted for running.</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -972,14 +1022,25 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Dasyurids">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Dasyuromorphia"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivore"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivorous"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Scansorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#April"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#March"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#May"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tasmanian Devil</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">5</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">25</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Deer -->
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#December -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Deer">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Artiodactyla"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#December">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#MatingSeason"/>
     </owl:NamedIndividual>
     
 
@@ -992,18 +1053,55 @@ icecap</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Dog -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Dog">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivora"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Dolphin -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Dolphin">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cetacea"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Natatorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#April"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#August"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#December"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#February"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#January"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#July"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#June"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#March"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#May"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#November"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#October"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#September"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dolphin</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">45</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Dugong -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Dugong">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Sirenia"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Herbivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Natatorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#April"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#August"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#December"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#February"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#January"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#July"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#June"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#March"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#May"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#November"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#October"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#September"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dugong</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">60</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Population rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">7500</Population>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
     </owl:NamedIndividual>
     
 
@@ -1012,6 +1110,14 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Echidnas">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Monotremata"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivorous"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#August"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#July"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Spiny Anteater</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">16</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
     </owl:NamedIndividual>
     
 
@@ -1020,6 +1126,29 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Elephant_Shrew">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Macroscelidea"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivorous"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Saltatorial"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jumping Shrew</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">5</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">2</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Elk -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Elk">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Artiodactyla"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Herbivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#November"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#October"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#September"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Deer</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">15</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">2</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
     </owl:NamedIndividual>
     
 
@@ -1032,10 +1161,10 @@ icecap</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Fall -->
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#February -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Fall">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Mating_Season"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#February">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#MatingSeason"/>
     </owl:NamedIndividual>
     
 
@@ -1048,18 +1177,38 @@ icecap</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Galagos -->
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Fossorial -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Galagos">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Strepsirrhini"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Fossorial">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Locomotion"/>
+        <rdfs:comment>Having limbs adapted for burrowing.</rdfs:comment>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Gerbil -->
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Frugivore -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Gerbil">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Rodentia"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Frugivore">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Diet"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Galago -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Galago">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Strepsirrhini"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Herbivore"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivorous"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Scansorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#February"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#January"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#November"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#October"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Galago</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">5</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">2</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
     </owl:NamedIndividual>
     
 
@@ -1080,26 +1229,33 @@ icecap</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Gorilla -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Gorilla">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Hominodea"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Hamster -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Hamster">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Rodentia"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Hare -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Hare">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Lagomorpha"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Herbivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Saltatorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#April"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#March"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hare</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">5</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">2</LitterSize>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">3</LitterSize>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">4</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Harp_Seal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Harp_Seal">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivora"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Piscivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Natatorial"/>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Population rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">55000000</Population>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
     </owl:NamedIndividual>
     
 
@@ -1108,6 +1264,20 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Hedgehog">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivora"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Herbivore"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivorous"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#April"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#August"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#July"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#June"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#May"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#September"/>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">5</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">4</LitterSize>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">5</LitterSize>
+        <Population rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1550000</Population>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
     </owl:NamedIndividual>
     
 
@@ -1128,10 +1298,38 @@ icecap</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Hippo -->
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Hippopotamus -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Hippo">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Hippopotamus">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Artiodactyla"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Herbivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#June"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#May"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hippo</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">40</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Population rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">200000</Population>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Horse -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Horse">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Perissodactyla"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Herbivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#April"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#August"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#July"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#June"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#May"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Horse</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">30</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
     </owl:NamedIndividual>
     
 
@@ -1140,22 +1338,65 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Human">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Hominodea"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Omnivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Person</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">80</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Hyraxes -->
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Hyrax -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Hyraxes">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Hyrax">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Hyracoidea"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Frugivore"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivorous"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Omnivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Scansorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#August"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#November"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#October"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#September"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hyrax</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">10</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">2</LitterSize>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">3</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Iteroparous -->
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivorous -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Iteroparous">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Reproduction"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivorous">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Diet"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#January -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#January">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#MatingSeason"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#July -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#July">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#MatingSeason"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#June -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#June">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#MatingSeason"/>
     </owl:NamedIndividual>
     
 
@@ -1164,6 +1405,16 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Kangaroo">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Diprotodontia"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Herbivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Saltatorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#August"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#July"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#June"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kangaroo</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">15</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">2</LitterSize>
+        <Population rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">8000000</Population>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
     </owl:NamedIndividual>
     
 
@@ -1172,6 +1423,20 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Koala">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Diprotodontia"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Herbivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Scansorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#December"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#February"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#January"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#March"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#November"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#October"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#September"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Koala</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">13</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Population rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">10000</Population>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
     </owl:NamedIndividual>
     
 
@@ -1188,6 +1453,15 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Lemur">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Strepsirrhini"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Frugivore"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Herbivore"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivorous"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Scansorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#April"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lemur</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">12</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">3</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
     </owl:NamedIndividual>
     
 
@@ -1200,10 +1474,55 @@ icecap</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Migratory -->
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Manatee -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Migratory">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Location"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Manatee">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Sirenia"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Herbivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Natatorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#April"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#August"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#July"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#June"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#March"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#May"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#November"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#October"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#September"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manatee</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">60</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#March -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#March">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#MatingSeason"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Marsupial_Moles -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Marsupial_Moles">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Notoryctemorphia"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivorous"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Fossorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#November"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marsupial Mole</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</Lifespan>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#May -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#May">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#MatingSeason"/>
     </owl:NamedIndividual>
     
 
@@ -1212,6 +1531,18 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Mole">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivora"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivorous"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Fossorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#April"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#March"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mole</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">3</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">2</LitterSize>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">3</LitterSize>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">4</LitterSize>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">5</LitterSize>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">6</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
     </owl:NamedIndividual>
     
 
@@ -1228,6 +1559,15 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Mouse">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Rodentia"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivorous"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Omnivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mouse</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">2</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">6</LitterSize>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">7</LitterSize>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">8</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
     </owl:NamedIndividual>
     
 
@@ -1244,6 +1584,7 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Natatorial">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Locomotion"/>
+        <rdfs:comment>Having limbs adapted for swimming.</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1252,6 +1593,22 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Nomatic">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Location"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#November -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#November">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#MatingSeason"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#October -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#October">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#MatingSeason"/>
     </owl:NamedIndividual>
     
 
@@ -1268,6 +1625,13 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Opossom">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Diprotodontia"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Frugivore"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivorous"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Omnivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Scansorial"/>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">8</LitterSize>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">9</LitterSize>
     </owl:NamedIndividual>
     
 
@@ -1276,30 +1640,32 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Orangutan">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Hominodea"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Frugivore"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivorous"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Omnivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Scansorial"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Orangutan</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">35</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Population rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">50000</Population>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Otter -->
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Pangolin -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Otter">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivora"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Pelagic -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Pelagic">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Aquatic"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Pig -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Pig">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Artiodactyla"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Pangolin">
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivorous"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Scansorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#July"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#June"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#May"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pangolin</CommonName>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">2</LitterSize>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">3</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
     </owl:NamedIndividual>
     
 
@@ -1308,14 +1674,24 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Pika">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Lagomorpha"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Herbivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#April"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#July"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#June"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#May"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pika</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">7</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">6</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Pinniped -->
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Piscivore -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Pinniped">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivora"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Piscivore">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Diet"/>
     </owl:NamedIndividual>
     
 
@@ -1332,6 +1708,37 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Platypus">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Monotremata"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivorous"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Natatorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#August"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#July"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#June"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#October"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#September"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Platypus</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">10</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">2</LitterSize>
+        <Population rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">50000</Population>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Polar_Bear -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Polar_Bear">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivora"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#April"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#May"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Polar Bear</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">30</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">2</LitterSize>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">3</LitterSize>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">4</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
     </owl:NamedIndividual>
     
 
@@ -1340,6 +1747,19 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Rabbit">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Lagomorpha"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Frugivore"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Herbivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Saltatorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#April"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#August"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#July"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#June"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#March"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#May"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rabbit</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">3</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">6</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
     </owl:NamedIndividual>
     
 
@@ -1352,18 +1772,25 @@ icecap</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Rat -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Rat">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Rodentia"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Reef -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Reef">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Aquatic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Rhinoceros -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Rhinoceros">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Perissodactyla"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Herbivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rhino</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">35</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Population rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">2300</Population>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
     </owl:NamedIndividual>
     
 
@@ -1380,6 +1807,7 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Saltatorial">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Locomotion"/>
+        <rdfs:comment>Having limbs adapted for leaping.</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1396,6 +1824,7 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Scansorial">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Locomotion"/>
+        <rdfs:comment>Having limbs adapted for climbing.</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1412,14 +1841,38 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Sea_Lion">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivora"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Piscivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Natatorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#August"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#July"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#June"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#May"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sea Lion</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">25</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Population rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">300000</Population>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Seal -->
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Sea_Otter -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Seal">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Sea_Otter">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivora"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivore"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Piscivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Natatorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#February"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#January"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#June"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#March"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#May"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sea Otter</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">11</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Population rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">100000</Population>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
     </owl:NamedIndividual>
     
 
@@ -1432,18 +1885,10 @@ icecap</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Semelparous -->
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#September -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Semelparous">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Reproduction"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Sheep -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Sheep">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Artiodactyla"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#September">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#MatingSeason"/>
     </owl:NamedIndividual>
     
 
@@ -1452,14 +1897,14 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Shrew">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivora"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Single_Offspring -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Single_Offspring">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Reproduction"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Fossorial"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Saltatorial"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shrew</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">3</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">5</LitterSize>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">6</LitterSize>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">7</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
     </owl:NamedIndividual>
     
 
@@ -1468,30 +1913,12 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Sloth">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Xenarthra"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Social -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Social">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Social"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Solitary -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Solitary">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Social"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Spring -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Spring">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Mating_Season"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivorous"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Scansorial"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sloth</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">25</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
     </owl:NamedIndividual>
     
 
@@ -1500,14 +1927,15 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Squirrel">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Rodentia"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Summer -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Summer">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Mating_Season"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Frugivore"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Herbivore"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivorous"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Saltatorial"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Scansorial"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Squirrel</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">6</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">5</LitterSize>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">6</LitterSize>
     </owl:NamedIndividual>
     
 
@@ -1520,10 +1948,16 @@ icecap</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Taiga -->
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Tapir -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Taiga">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Terrestrial"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Tapir">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Perissodactyla"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Frugivore"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Herbivore"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tapir</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">27</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
     </owl:NamedIndividual>
     
 
@@ -1532,6 +1966,18 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Tarsier">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Tarsiiformes"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivore"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivorous"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Saltatorial"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Scansorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#April"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#June"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#May"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#November"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#October"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tarsier</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">24</Lifespan>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
     </owl:NamedIndividual>
     
 
@@ -1540,6 +1986,29 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Territorial">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Social"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Tiger -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Tiger">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivora"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivore"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Elk"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#April"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#December"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#February"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#January"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#March"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#November"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tiger</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">22</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">3</LitterSize>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">4</LitterSize>
+        <Population rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">400</Population>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
     </owl:NamedIndividual>
     
 
@@ -1564,6 +2033,31 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Weasel">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivora"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivore"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Hare"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Mouse"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Rabbit"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Shrew"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Weasel</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">6</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">6</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Western_Low_Land_Gorilla -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Western_Low_Land_Gorilla">
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Herbivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Scansorial"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Western Low-Land Gorilla</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">50</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Population rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">100000</Population>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
     </owl:NamedIndividual>
     
 
@@ -1572,14 +2066,35 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Whale">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cetacea"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Piscivore"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Planktivore"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Natatorial"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#December"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#February"/>
+        <MatesDuring rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#January"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Whale</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">47</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Population rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">12000</Population>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Winter -->
+    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Wolf -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Winter">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Mating_Season"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Wolf">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivora"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivore"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Elk"/>
+        <Locomotion rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wold</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">11</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">4</LitterSize>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">5</LitterSize>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">6</LitterSize>
+        <Population rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">200000</Population>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</Social>
     </owl:NamedIndividual>
     
 
@@ -1588,104 +2103,11 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Wombat">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Diprotodontia"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#anteaters -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#anteaters">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Xenarthra"/>
-        <hasDiet rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivore"/>
-        <LifeSpan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">15</LifeSpan>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#dugong -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#dugong">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Sirenia"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#elephant -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#elephant">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Proboscidea"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#horse -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#horse">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Perissodactyla"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#mammoth -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#mammoth">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Proboscidea"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#manatee -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#manatee">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Sirenia"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#marsupial_moles -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#marsupial_moles">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Notoryctemorphia"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#mastodont -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#mastodont">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Proboscidea"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#pangolin -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#pangolin">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Pholidota"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#rhino -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#rhino">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Perissodactyla"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#tapirs -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#tapirs">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Perissodactyla"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#thylacines -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#thylacines">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Dasyuromorphia"/>
+        <Consumes rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Herbivore"/>
+        <CommonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wombat</CommonName>
+        <Lifespan rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">24</Lifespan>
+        <LitterSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</LitterSize>
+        <Social rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</Social>
     </owl:NamedIndividual>
     
 
@@ -1698,32 +2120,6 @@ icecap</rdfs:comment>
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Diet">
-        <rdfs:comment>carnivore
-
-    eats terrestrial vertebrates
-    piscivore
-    eats eggs
-    sanguivore
-    eats body fluids
-    insectivore
-    eats non-insect arthropods
-    molluscivore
-    scavenger
-
-herbivore
-
-    folivore
-    frugivore
-    granivore
-    lignivore
-    nectarivore
-
-omnivore
-planktivore
-mycophage
-coprophage</rdfs:comment>
-    </rdf:Description>
     <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Locomotion">
         <rdfs:comment>Terrestrial
 Arboreal
