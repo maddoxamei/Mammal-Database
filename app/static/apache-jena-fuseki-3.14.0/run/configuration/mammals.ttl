@@ -12,18 +12,6 @@ ja:DatasetTxnMem  rdfs:subClassOf  ja:RDFDataset .
 
 tdb:DatasetTDB  rdfs:subClassOf  ja:RDFDataset .
 
-:service1  a                          fuseki:Service ;
-        fuseki:dataset                :dataset ;
-        fuseki:name                   "mammals" ;
-        fuseki:serviceQuery           "" , "query" , "sparql" ;
-        fuseki:serviceReadGraphStore  "get" ;
-        fuseki:serviceReadQuads       "" ;
-        fuseki:serviceReadWriteGraphStore
-                "data" ;
-        fuseki:serviceReadWriteQuads  "" ;
-        fuseki:serviceUpdate          "update" , "" ;
-        fuseki:serviceUpload          "upload" .
-
 tdb:GraphTDB  rdfs:subClassOf  ja:Model .
 
 <http://jena.apache.org/2016/tdb#GraphTDB2>
@@ -36,14 +24,29 @@ ja:RDFDatasetZero  rdfs:subClassOf  ja:RDFDataset .
 <http://jena.apache.org/text#TextDataset>
         rdfs:subClassOf  ja:RDFDataset .
 
+:service_tdb_all  a                   fuseki:Service ;
+        rdfs:label                    "TDB mammals" ;
+        fuseki:dataset                :tdb_dataset_readwrite ;
+        fuseki:name                   "mammals" ;
+        fuseki:serviceQuery           "query" , "" , "sparql" ;
+        fuseki:serviceReadGraphStore  "get" ;
+        fuseki:serviceReadQuads       "" ;
+        fuseki:serviceReadWriteGraphStore
+                "data" ;
+        fuseki:serviceReadWriteQuads  "" ;
+        fuseki:serviceUpdate          "" , "update" ;
+        fuseki:serviceUpload          "upload" .
+
+:tdb_dataset_readwrite
+        a             tdb:DatasetTDB ;
+        tdb:location  "C:\\Users\\maddo\\Documents\\GitHub\\Mammal-Database\\app\\static\\apache-jena-fuseki-3.14.0\\run/databases/mammals" .
+
 <http://jena.apache.org/2016/tdb#GraphTDB>
         rdfs:subClassOf  ja:Model .
 
 ja:RDFDatasetOne  rdfs:subClassOf  ja:RDFDataset .
 
 ja:RDFDatasetSink  rdfs:subClassOf  ja:RDFDataset .
-
-:dataset  a     ja:DatasetTxnMem .
 
 <http://jena.apache.org/2016/tdb#DatasetTDB2>
         rdfs:subClassOf  ja:RDFDataset .
