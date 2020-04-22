@@ -1,19 +1,20 @@
 import os
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, url_for, request, send_from_directory
 from SPARQLWrapper import SPARQLWrapper, JSON
 #import requests
 #import traceback
 
 app = Flask(__name__)
 
-ENDPOINT = 'http://localhost:3030/mammals'
-#server = init()
 #/query, /update, /data HTTP update
 def init():
-    os.system('/static/apache-jena-fuseki-3.14.0/fuseki-server')
+    print(os.getcwd()+'\\static\\apache-jena-fuseki-3.14.0\\fuseki-server --update')
     sparql = SPARQLWrapper(ENDPOINT+"/query")
     sparql.setReturnFormat(JSON)
     return sparql
+ENDPOINT = 'http://localhost:3030/mammals'
+server = init()
+
 
 prefix = """ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
@@ -27,6 +28,11 @@ def query(str):
         #print(result["label"]["value"])
     return results
 
+#@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                          'favicon.ico',mimetype='image/vnd.microsoft.icon')
+
 @app.route("/")
 @app.route("/home")
 def home():
@@ -35,6 +41,8 @@ def home():
 @app.route('/<string:page_name>/')
 def render_static(page_name):
     return render_template('%s.html' % page_name)
+
+#app.add_url_rule('/favicon.ico', redirect_to=url_for('static', filename='favicon.ico'))
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -28,7 +28,7 @@ function importHTML(obj){
     element = (obj.contentDocument.body||obj.contentDocument).children[i];
     clone = document.createElement(element.tagName);
     clone.innerHTML = element.innerHTML;
-    document.getElementById("header").appendChild(clone);
+    document.getElementById(obj.getAttribute('data')).appendChild(clone);
   }
   obj.remove();
 }

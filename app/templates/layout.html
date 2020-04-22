@@ -3,6 +3,8 @@
 <head>
   <title> Mammals by Mei </title>
 
+  <link rel="shortcut icon" href="{{ url_for('static', filename='icon.ico') }}">
+
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='general.css')}}">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='section.css')}}">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='split.css')}}">
@@ -19,16 +21,16 @@
 
 
   <div class="section">
-    
-    <iframe src="header" onload="importHTML(this)"></iframe>
-
+    <object type="text/html" data="header" onload="importHTML(this)"></object>
     <div id="header" src="header.html"></div>
   </div>
 
   <div class="section">
     <div class="two-column">
-      <div id="query" class="column"></div>
-      <div id="results" class="column"></div>
+      <object type="text/html" data="query" onload="importHTML(this)"></object>
+      <div id="query" class="left column"></div>
+
+      <div id="results" class="right column"></div>
     </div>
   </div>
 

@@ -20,6 +20,12 @@ body {
   transform: translate(-50%, 0%);
 }
 
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 
 
 .print {

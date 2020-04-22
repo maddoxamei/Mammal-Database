@@ -1,0 +1,28 @@
+<h3>Search The Database</h3>
+
+
+<form action="/action_page.php" id="assisted-queryform">
+  <div class="querycenter">
+    Subject: <input type="text" name="sub">
+    Predicate: <input type="text" name="pred">
+    Object: <input type="text" name="obj">
+  </div>
+  <input class="center-block" type="submit">
+
+</form>
+
+<h5> The following prefixes are pre-set for all queries </h5>
+
+<div>
+  <div class="inline">
+    <p> prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; </p>
+    <p> prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt;</p>
+    <p> prefix m: &lt;http://www.semanticweb.org/ontologies/2020/2/Mammal#&gt; </p>
+  </div>
+</div>
+
+<form action="/action_page.php" id="queryform">
+
+  <textarea placeholder="Type your query here..." name="search" required form="queryform"></textarea>
+  <input class="inline" type="submit">
+</form>

@@ -8,12 +8,36 @@
   float: left;
   width: 50%;
   overflow-x: hidden;
-  border: hidden hidden solid hidden;
-  padding: 20px;
 }
 
 .left {
     border-style: hidden solid hidden hidden;
+}
+
+textarea {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:90%;
+  height: 10vw;
+  border:2px solid #719ECE;
+  outline-color: #719ECE;
+}
+
+.querycenter {
+  text-align:center
+}
+
+.querycenter input {
+    border:2px solid #719ECE;
+    outline-color: #719ECE;
+}
+
+.inline {
+  display: block;
+  width:90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .right {
