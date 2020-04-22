@@ -13,9 +13,6 @@
     border-right: hidden;
 }
 
-.section h2 {
-  text-align: center;
-}
-.section h5 {
-  text-align: center;
+.section h1, h2, h3, h4, h5, h6 {
+    text-align: center;
 }

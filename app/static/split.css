@@ -2,7 +2,6 @@
   content: "";
   display: table;
   clear: both;
-  flex-wrap: wrap;
 }
 
 .column {
@@ -11,7 +10,6 @@
   overflow-x: hidden;
   border: hidden hidden solid hidden;
   padding: 20px;
-  flex: 50%;
 }
 
 .left {

@@ -9,6 +9,10 @@ body {
   text-align: justify;
 }
 
+.imported {
+  text-align: inherit;
+}
+
 .centered {
   position: relative;
   top: 50%;

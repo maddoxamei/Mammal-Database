@@ -15,14 +15,26 @@
 </head>
 
 
-<body onload="init()">
+<body>
+
+
   <div class="section">
-    <div id="header"></div>
+    
+    <iframe src="header" onload="importHTML(this)"></iframe>
+
+    <div id="header" src="header.html"></div>
   </div>
 
-  <script>
-    loadHTML("header", "header");
-  </script>
+  <div class="section">
+    <div class="two-column">
+      <div id="query" class="column"></div>
+      <div id="results" class="column"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div id="footer"></div>
+  </div>
 
 </body>
 </html>
