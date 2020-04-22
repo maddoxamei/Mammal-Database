@@ -1,0 +1,21 @@
+/* Add a card effect for articles */
+.section {
+  position: relative;
+  text-align: justify;
+  background: white;
+  border: 2px solid black; /* #ccc */
+}
+
+.hidden-boarders {
+    border-top: hidden;
+    border-bottom: hidden;
+    border-left: hidden;
+    border-right: hidden;
+}
+
+.section h2 {
+  text-align: center;
+}
+.section h5 {
+  text-align: center;
+}

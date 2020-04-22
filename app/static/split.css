@@ -1,0 +1,32 @@
+.two-column:after {
+  content: "";
+  display: table;
+  clear: both;
+  flex-wrap: wrap;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  overflow-x: hidden;
+  border: hidden hidden solid hidden;
+  padding: 20px;
+  flex: 50%;
+}
+
+.left {
+    border-style: hidden solid hidden hidden;
+}
+
+.right {
+    border-style: hidden hidden hidden hidden;
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    float: none;
+    width: 100%;
+    padding: 0
+  }
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE>
+<html lang='en'>
+<head>
+  <title> Mammals by Mei </title>
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='general.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='section.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='split.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='tabs.css')}}">
+
+
+  <script type="text/javascript" src="{{ url_for('static',filename='javascript.js')}}"> </script>
+
+
+</head>
+
+
+<body onload="init()">
+  <div class="section">
+    <div id="header"></div>
+  </div>
+
+  <script>
+    loadHTML("header", "header");
+  </script>
+
+</body>
+</html>
