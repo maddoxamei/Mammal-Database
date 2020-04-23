@@ -17,7 +17,7 @@
 </head>
 
 
-<body>
+<body onload="init()">
 
 
   <div class="section">
@@ -27,14 +27,17 @@
 
   <div class="section">
     <div class="two-column">
-      <object type="text/html" data="query" onload="importHTML(this)"></object>
-      <div id="query" class="left column"></div>
 
-      <div id="results" class="right column"></div>
+      <div id="query" class="column"></div>
+      <div id="results" class="column"></div>
+
+      <object type="text/html" data="query" onload="importHTML(this)"></object>
+      <object type="text/html" data="results" onload="importHTML(this)"></object>
     </div>
   </div>
 
   <div class="section">
+    <object type="text/html" data="footer" onload="importHTML(this)"></object>
     <div id="footer"></div>
   </div>
 

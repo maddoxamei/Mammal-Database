@@ -1,17 +1,5 @@
-<h3>Search The Database</h3>
-
-
-<form action="/action_page.php" id="assisted-queryform">
-  <div class="querycenter">
-    Subject: <input type="text" name="sub">
-    Predicate: <input type="text" name="pred">
-    Object: <input type="text" name="obj">
-  </div>
-  <input class="center-block" type="submit">
-
-</form>
-
-<h5> The following prefixes are pre-set for all queries </h5>
+<h3>Database Management</h3>
+<h5> The following prefixes are pre-defined </h5>
 
 <div>
   <div class="inline">
@@ -21,8 +9,57 @@
   </div>
 </div>
 
-<form action="/action_page.php" id="queryform">
+<div>
+  <div class="tab">
+    <button id='queryTab' class="tablinks" onclick="selectManagement(this, 'Query')">Query Records</button>
+    <button class="tablinks" onclick="selectManagement(this, 'Update')">Update Records</button>
+    <button class="tablinks" onclick="selectManagement(this, 'Add')">Add Records</button>
+    <button class="tablinks" onclick="selectManagement(this, 'Remove')">Remove Records</button>
+  </div>
+</div>
 
-  <textarea placeholder="Type your query here..." name="search" required form="queryform"></textarea>
-  <input class="inline" type="submit">
-</form>
+<div>
+  <div id="Query" class="tabcontent">
+    <form action="/action_page.php" id="queryform">
+      <textarea id="search" placeholder="Type your query here..." name="search" required form="queryform"></textarea>
+      <input class="inline" type="button" value="Submit" onclick="query()"> <!-- type="submit" for php -->
+    </form>
+  </div>
+</div>
+
+<div>
+  <div id="Update" class="tabcontent">
+    <p> Something for updating </p>
+    <form action="/action_page.php" id="assisted-queryform">
+      <div class="querycenter">
+      </div>
+      <input class="center-block" type="button" value="Submit" onclick="update()">
+    </form>
+  </div>
+</div>
+
+<div>
+  <div id="Add" class="tabcontent">
+    <p> Please denote the resource as a tripple using turtle syntax. </p>
+    <form action="/action_page.php" id="assisted-queryform">
+      <div class="querycenter">
+        Subject: <input type="text" id="sub" name="sub">
+        Predicate: <input type="text" id="pred" name="pred">
+        Object: <input type="text" id="obj" name="obj">
+      </div>
+      <p></p>
+      <input class="center-block" type="button" value="Submit" onclick="add()">
+    </form>
+  </div>
+</div>
+
+<div>
+  <div id="Remove" class="tabcontent">
+    <p> Something for removing </p>
+    <form action="/action_page.php" id="assisted-queryform">
+      <div class="querycenter">
+      </div>
+      <input class="center-block" type="button" value="Submit" onclick="remove()">
+    </form>
+  </div>
+</div>

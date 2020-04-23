@@ -1,24 +1,7 @@
-function clone(filename){
-  var link = document.querySelector('link[rel="import"]');
-  var content = link.import;
-
-  // Grab DOM from warning.html's document.
-  var el = content.querySelector('.'+filename);
-
-  document.body.appendChild(el.cloneNode(true));
-}
-
-document.addEventListener('DOMContentLoaded', init, false);
-
+//document.addEventListener('DOMContentLoaded', init, false);
 function init(){
+  selectManagement(document.getElementById('queryTab'), 'Query')
   //loadHTML("header", "header");
-}
-
-function loadHTML(id, filename){
-  var html = document.createTextNode();
-  document.getElementById(id).appendChild(html);
-  document.getElementById(id).innerHTML='<object type="text/html" data="'+filename+'" ></object>';
-  alert(document.getElementById(id).innerHTML);
 }
 
 function importHTML(obj){
@@ -31,4 +14,34 @@ function importHTML(obj){
     document.getElementById(obj.getAttribute('data')).appendChild(clone);
   }
   obj.remove();
+}
+
+function selectManagement(tab, direction) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(direction).style.display = "block";
+  tab.className += " active";
+}
+
+function query(){
+  alert("querying", document.getElementById('search').value);
+}
+
+function update(){
+  alert("will update");
+}
+
+function add(){
+  alert("will add");
+}
+
+function remove(){
+  alert("will remove");
 }
