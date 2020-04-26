@@ -30,10 +30,10 @@
 <div>
   <div id="Update" class="tabcontent">
     <p> Something for updating </p>
-    <form action="/update_page" id="assisted-queryform">
+    <form action="/update_page" method="post">
       <div class="querycenter">
       </div>
-      <input class="center-block" type="button" value="Submit" onclick="update()">
+      <input class="center-block" type="submit" value="Submit">
     </form>
   </div>
 </div>
@@ -41,14 +41,14 @@
 <div>
   <div id="Add" class="tabcontent">
     <p> Please denote the resource as a tripple using turtle syntax. </p>
-    <form action="/add_page" id="assisted-queryform">
+    <form action="/add_page" method="post">
       <div class="querycenter">
         Subject: <input type="text" id="sub" name="sub">
         Predicate: <input type="text" id="pred" name="pred">
         Object: <input type="text" id="obj" name="obj">
       </div>
       <p></p>
-      <input class="center-block" type="button" value="Submit" onclick="add()">
+      <input class="center-block" type="submit" value="Submit">
     </form>
   </div>
 </div>
@@ -56,10 +56,10 @@
 <div>
   <div id="Remove" class="tabcontent">
     <p> Something for removing </p>
-    <form action="/remove_page" id="assisted-queryform">
+    <form action="/remove_page" method="post">
       <div class="querycenter">
       </div>
-      <input class="center-block" type="button" value="Submit" onclick="remove()">
+      <input class="center-block" type="submit" value="Submit">
     </form>
   </div>
 </div>
