@@ -10,16 +10,15 @@ ENDPOINT = 'http://localhost:3030/mammals'
 
 #/query, /update, /data HTTP update
 def init():
-    subprocess.call("run.bat")
+    subprocess.call("startup-fuseki.bat")
 
     data = open('static/Mammal.owl').read()
     headers = {'Content-Type': 'application/rdf+xml;charset=utf-8'}
     r = requests.post('http://localhost:3030/mammals/data?default', data=data, headers=headers)
     sparql = SPARQLWrapper(ENDPOINT+"/query")
     sparql.setReturnFormat(JSON)
-    global server
-    server = sparql
-    queryex();
+    global server_query
+    server_query = sparql
 
 
 
@@ -28,8 +27,8 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix m: <http://www.semanticweb.org/ontologies/2020/2/Mammal#> """
 def queryex():
     query = "SELECT DISTINCT ?class ?label ?description WHERE { ?class a owl:Class. OPTIONAL { ?class rdfs:label ?label} OPTIONAL { ?class rdfs:comment ?description}}"
-    server.setQuery(" "" "+prefix+query+" "" ")
-    results = server.query().convert()
+    server_query.setQuery(" "" "+prefix+query+" "" ")
+    results = server_query.query().convert()
     for result in results["results"]["bindings"]:
         print(result)
         #print(result["class"]["value"])
@@ -42,9 +41,16 @@ def favicon():
                           'favicon.ico',mimetype='image/vnd.microsoft.icon')
 
 @app.route("/")
-@app.route("/home")
-def home():
-	return render_template('layout.html')
+def index():
+    response = ""
+    return render_template('layout.html', response=response)
+
+@app.route("/query_page", methods=['POST'])
+def query():
+    query = request.form.get('search');
+    server_query.setQuery(" "" "+prefix+query+" "" ")
+    response = server_query.query().convert()
+    return render_template('layout.html', response=response)
 
 @app.route('/<string:page_name>/')
 def render_static(page_name):

@@ -19,7 +19,6 @@
 
 <body onload="init()">
 
-
   <div class="section">
     <object type="text/html" data="header" onload="importHTML(this)"></object>
     <div id="header" src="header.html"></div>
@@ -29,10 +28,12 @@
     <div class="two-column">
 
       <div id="query" class="column"></div>
-      <div id="results" class="column"></div>
+      <div id="results" class="column">
+        <h3>Results!</h3>
+        <p> {{ response }} </p>
+      </div>
 
       <object type="text/html" data="query" onload="importHTML(this)"></object>
-      <object type="text/html" data="results" onload="importHTML(this)"></object>
     </div>
   </div>
 

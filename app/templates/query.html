@@ -20,9 +20,9 @@
 
 <div>
   <div id="Query" class="tabcontent">
-    <form action="/action_page.php" id="queryform">
+    <form action="/query_page" method="post" id="queryform">
       <textarea id="search" placeholder="Type your query here..." name="search" required form="queryform"></textarea>
-      <input class="inline" type="button" value="Submit" onclick="query()"> <!-- type="submit" for php -->
+      <input class="inline" type="Submit" value="Submit" onclick="query()"> <!-- type="submit" for php -->
     </form>
   </div>
 </div>
@@ -30,7 +30,7 @@
 <div>
   <div id="Update" class="tabcontent">
     <p> Something for updating </p>
-    <form action="/action_page.php" id="assisted-queryform">
+    <form action="/update_page" id="assisted-queryform">
       <div class="querycenter">
       </div>
       <input class="center-block" type="button" value="Submit" onclick="update()">
@@ -41,7 +41,7 @@
 <div>
   <div id="Add" class="tabcontent">
     <p> Please denote the resource as a tripple using turtle syntax. </p>
-    <form action="/action_page.php" id="assisted-queryform">
+    <form action="/add_page" id="assisted-queryform">
       <div class="querycenter">
         Subject: <input type="text" id="sub" name="sub">
         Predicate: <input type="text" id="pred" name="pred">
@@ -56,7 +56,7 @@
 <div>
   <div id="Remove" class="tabcontent">
     <p> Something for removing </p>
-    <form action="/action_page.php" id="assisted-queryform">
+    <form action="/remove_page" id="assisted-queryform">
       <div class="querycenter">
       </div>
       <input class="center-block" type="button" value="Submit" onclick="remove()">
