@@ -45,12 +45,12 @@ def index():
 @app.route("/query_page", methods=['POST'])
 def query():
     query = request.form.get('search');
-    response.update(q=list(g.query(query)))
+    response.update(p=[],q=list(g.query(query)))
     return render_template('layout.html', response=response)
 
 @app.route("/add_page", methods=['POST'])
 def add():
-    response.update(p = "Incorrect Input Method. A tripple consists of an :")
+    response.update(p = "Incorrect Input Method. A tripple consists of an :", q=[])
 
     sub = request.form.get('sub')
     pred = request.form.get('pred')
@@ -61,7 +61,6 @@ def add():
     object = obj.split(':')
 
     if(len(subject)==2 and len(predicate)==2 and len(object)==2):
-        #subject = rdflib.URIRef(namespaces)
         subject = rdflib.URIRef(namespaces[subject[0]]+subject[1])
         predicate = rdflib.URIRef(namespaces[predicate[0]]+predicate[1])
         object = rdflib.URIRef(namespaces[object[0]]+object[1])
@@ -69,8 +68,38 @@ def add():
         line = ["After the ADDITION, there are {} triples in the graph.".format(len(g)),
                 " To view the recent addition use the following query:",
                 "Select ?"+obj.split(':')[1]+" Where { ?"+obj.split(':')[1]+" "+pred+" "+obj+"}"]
-        response.update(p=line)
-    #response = namespace.Development.test
+        response.update(p=line, q=[])
+    return render_template('layout.html', response=response)
+
+@app.route("/remove_page", methods=['POST'])
+def remove():
+    response.update(p = "Incorrect Input Method. A tripple consists of an :", q=[])
+
+    sub = request.form.get('sub')
+    pred = request.form.get('pred')
+    obj = request.form.get('obj')
+    value = request.form.get('removal_type')
+
+    subject = sub.split(':')
+    predicate = pred.split(':')
+    object = obj.split(':')
+
+    if(len(subject)==2):
+        subject = rdflib.URIRef(namespaces[subject[0]]+subject[1])
+        if(predicate == [''] and object == ['']):
+            if(value=='Purge'):
+                response.update(p = ["Purging all..", "After the REMOVAL, there are {} triples in the graph.".format(len(g))], q=[])
+                g.remove((subject, None, None))
+            else:
+                response.update(p = ["Careful! The purge option must be selected to purge"], q=[])
+        else:
+            if(value=='Single'):
+                predicate = rdflib.URIRef(namespaces[predicate[0]]+predicate[1])
+                object = rdflib.URIRef(namespaces[object[0]]+object[1])
+                g.remove((subject, predicate, object))
+                response.update(p = ["Removing: "+sub+" "+pred+" "+obj, "After the REMOVAL, there are {} triples in the graph.".format(len(g))], q=[])
+            else:
+                response.update(p = ["Careful! The single option must be selected to remove a specific tripple"], q=[])
     return render_template('layout.html', response=response)
 
 @app.route('/<string:page_name>/')

@@ -21,7 +21,7 @@
 <div>
   <div id="Query" class="tabcontent">
     <form action="/query_page" method="post">
-      <textarea id="search" placeholder="Type your query here..." name="search" required></textarea>
+      <textarea placeholder="Type your query here..." name="search" required></textarea>
       <input class="inline" type="Submit" value="Submit"> <!-- type="submit" for php -->
     </form>
   </div>
@@ -43,9 +43,9 @@
     <p> Please denote the resource as a tripple using turtle syntax. </p>
     <form action="/add_page" method="post">
       <div class="querycenter">
-        Subject: <input type="text" id="sub" name="sub">
-        Predicate: <input type="text" id="pred" name="pred">
-        Object: <input type="text" id="obj" name="obj">
+        Subject: <input type="text" name="sub" placeholder="Required field.." required>
+        Predicate: <input type="text"  name="pred" placeholder="Required field.." required>
+        Object: <input type="text" name="obj" placeholder="Required field.." required>
       </div>
       <p></p>
       <input class="center-block" type="submit" value="Submit">
@@ -55,10 +55,22 @@
 
 <div>
   <div id="Remove" class="tabcontent">
-    <p> Something for removing </p>
+    <h4> There are two methods to remove tripples from this database: </h4>
+
     <form action="/remove_page" method="post">
-      <div class="querycenter">
+      <div style="text-align:left">
+        <input type="radio" name="removal_type" value="Single" onclick="removalSelection(this.value)"> Remove a single specific tripple <br>
+        <input type="radio" name="removal_type" value="Purge" onclick="removalSelection(this.value)"> Purge all tripples relating to the specified subject <br>
       </div>
+
+      <h4 id="help_text"> </h4>
+
+      <div class="querycenter">
+        Subject: <input type="text" id="sub" name="sub" placeholder="Required field.." required>
+        Predicate: <input type="text" id="pred" name="pred">
+        Object: <input type="text" id="obj" name="obj">
+      </div>
+      <br>
       <input class="center-block" type="submit" value="Submit">
     </form>
   </div>

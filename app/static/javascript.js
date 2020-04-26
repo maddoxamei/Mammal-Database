@@ -30,18 +30,7 @@ function selectManagement(tab, direction) {
   tab.className += " active";
 }
 
-function query(){
-  alert("querying", document.getElementById('search').value);
-}
-
-function update(){
-  alert("will update");
-}
-
-function add(){
-  alert("will add");
-}
-
-function remove(){
-  alert("will remove");
+function removalSelection(value){
+  if(value == 'Single') document.getElementById('help_text').innerHTML = "To remove a specific tripple, all three fields below must be filled out.";
+  else document.getElementById('help_text').innerHTML = "Leaving the predicate and object fields empty will result in a purge of all subject-related tripples.";
 }
