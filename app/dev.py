@@ -1,39 +1,31 @@
-import os, subprocess, threading
+import requests, rdflib, pprint
 from flask import Flask, render_template, url_for, request, send_from_directory
-from SPARQLWrapper import SPARQLWrapper, JSON
-import requests
-#import traceback
+from rdflib.namespace import FOAF, OWL, RDF, RDFS , XSD, XMLNS
+from rdflib import BNode, Literal, Namespace
 
 app = Flask(__name__)
 
-ENDPOINT = 'http://localhost:3030/mammals'
-
 #/query, /update, /data HTTP update
-def init():
-    subprocess.call("startup-fuseki.bat")
 
-    data = open('static/Mammal.owl').read()
-    headers = {'Content-Type': 'application/rdf+xml;charset=utf-8'}
-    r = requests.post('http://localhost:3030/mammals/data?default', data=data, headers=headers)
-    sparql = SPARQLWrapper(ENDPOINT+"/query")
-    sparql.setReturnFormat(JSON)
-    global server_query
-    server_query = sparql
+g = rdflib.Graph()
+g.parse('static/Mammal.owl', format="application/rdf+xml")
 
+rdf = rdflib.URIRef("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
+rdfs = rdflib.URIRef("http://www.w3.org/2000/01/rdf-schema#")
+owl = rdflib.URIRef("http://www.w3.org/2002/07/owl#")
+xsd = rdflib.URIRef("http://www.w3.org/2001/XMLSchema#")
+xml = rdflib.URIRef("http://www.w3.org/XML/1998/namespace#")
+mammal = rdflib.URIRef("http://www.semanticweb.org/ontologies/2020/2/Mammal#")
+g.bind('rdf', RDF)
+g.bind('rdfs', RDFS)
+g.bind('owl', OWL)
+g.bind('xsd', XSD)
+g.bind('xml', XMLNS)
+g.bind('foaf', FOAF)
+g.bind('m', mammal)
+#print(g.serialize().decode("utf-8"))
+print("Total Tripples:\t",len(g))
 
-
-prefix = """ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-prefix owl: <http://www.w3.org/2002/07/owl#>
-prefix m: <http://www.semanticweb.org/ontologies/2020/2/Mammal#> """
-def queryex():
-    query = "SELECT DISTINCT ?class ?label ?description WHERE { ?class a owl:Class. OPTIONAL { ?class rdfs:label ?label} OPTIONAL { ?class rdfs:comment ?description}}"
-    server_query.setQuery(" "" "+prefix+query+" "" ")
-    results = server_query.query().convert()
-    for result in results["results"]["bindings"]:
-        print(result)
-        #print(result["class"]["value"])
-        #print(result["label"]["value"])
-    return results
 
 #@app.route('/favicon.ico')
 def favicon():
@@ -48,8 +40,17 @@ def index():
 @app.route("/query_page", methods=['POST'])
 def query():
     query = request.form.get('search');
-    server_query.setQuery(" "" "+prefix+query+" "" ")
-    response = server_query.query().convert()
+    response = list(g.query(query))
+    return render_template('layout.html', response=response)
+
+@app.route("/add_page", methods=['POST'])
+def add():
+    print (namespace.Development)
+    #g.add((m.Development.test, rdfs.subClassOf, m.Development))
+    query = "SELECT ?class	where { ?class rdfs:subClassOf m:Development }"
+    #response = "After the ADDITION, there are {} triples in the graph".format(len(g))
+    test = rdflib.URIRef(namespace.Development+"/test")
+    response = namespace.Development.test
     return render_template('layout.html', response=response)
 
 @app.route('/<string:page_name>/')
@@ -59,5 +60,4 @@ def render_static(page_name):
 #app.add_url_rule('/favicon.ico', redirect_to=url_for('static', filename='favicon.ico'))
 
 if __name__ == "__main__":
-    threading.Thread(target=init).start()
     app.run(debug=True) #have to ctrl+C to start the app
