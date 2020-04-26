@@ -21,7 +21,33 @@
 <div>
   <div id="Query" class="tabcontent">
     <form action="/query_page" method="post">
-      <textarea placeholder="Type your query here..." name="search" required></textarea>
+
+      <h4> Select the query method </h4>
+
+        <div style="text-align:left">
+          <input type="radio" name="query_type" value="generator" onclick="querySelection(this.value)"> Generate a list of tripples matching the pattern given by the arguments. <br>
+          <input type="radio" name="query_type" value="specific" onclick="querySelection(this.value)"> Write out a custom query. <br>
+        </div>
+
+
+        <div id="generator">
+          <h4> The arguments of these are RDF terms that restrict the triples that are returned. <br> Unfilled arguments are considered wild-cards. </h4>
+            <div class="querycenter">
+              Subject: <input type="text" name="sub" placeholder="Wild card..">
+              Predicate: <input type="text"  name="pred" placeholder="Wild card..">
+              Object: <input type="text" name="obj" placeholder="Wild card..">
+            </div>
+            <br>
+            <input class="center-block" type="submit" value="Submit">
+        </div>
+
+
+        <div id="specific">
+          <br>
+          <textarea placeholder="Type your query here..." name="search"></textarea>
+        </div>
+
+
       <input class="inline" type="Submit" value="Submit"> <!-- type="submit" for php -->
     </form>
   </div>
@@ -29,18 +55,19 @@
 
 <div>
   <div id="Update" class="tabcontent">
-    <p> Something for updating </p>
+    <h4> Allows for more complex SPARQL updates. </h4>
     <form action="/update_page" method="post">
       <div class="querycenter">
+        <textarea placeholder="Type your update here..." name="search"></textarea>
       </div>
-      <input class="center-block" type="submit" value="Submit">
+      <input class="inline" type="submit" value="Submit">
     </form>
   </div>
 </div>
 
 <div>
   <div id="Add" class="tabcontent">
-    <p> Please denote the resource as a tripple using turtle syntax. </p>
+    <h4> Please denote the resource as a tripple using turtle syntax. </h4>
     <form action="/add_page" method="post">
       <div class="querycenter">
         Subject: <input type="text" name="sub" placeholder="Required field.." required>

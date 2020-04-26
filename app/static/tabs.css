@@ -53,3 +53,8 @@
 .tabcontent button:hover {
   background-color: #f1f1f1;
 }
+
+/* Style the tab content */
+.query_selection {
+  display: hidden;
+}
