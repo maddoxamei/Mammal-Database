@@ -1,7 +1,6 @@
-import requests, rdflib, pprint
+import requests, rdflib
 from flask import Flask, render_template, url_for, request, send_from_directory
 from rdflib.namespace import FOAF, OWL, RDF, RDFS , XSD, XMLNS
-from rdflib import BNode, Literal, Namespace
 
 app = Flask(__name__)
 
@@ -65,7 +64,6 @@ def index():
 def query():
     value = request.form.get('query_type')
     s, p, o = getArguments(request.form.get('sub'), request.form.get('pred'), request.form.get('obj'))
-    print(value)
     if(value==None):
         response.update(p=["Error. Please select a query method."],q=[])
         results = []
