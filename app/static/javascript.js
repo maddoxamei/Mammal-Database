@@ -34,3 +34,15 @@ function removalSelection(value){
   if(value == 'Single') document.getElementById('help_text').innerHTML = "To remove a specific tripple, all three fields below must be filled out.";
   else document.getElementById('help_text').innerHTML = "Leaving the predicate and object fields empty will result in a purge of all subject-related tripples.";
 }
+
+function displayPhrases(list){
+  var phrases = list;
+  alert(phrases);
+  /*
+  var str = '<div>';
+  phrases.forEach(function(phrase){
+    str += '<p>'+ item + '</p>';
+  });
+  str += '</div>';
+  document.getElementById("phrases").innerHTML = str;*/
+}

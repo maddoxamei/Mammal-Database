@@ -30,7 +30,22 @@
       <div id="query" class="column"></div>
       <div id="results" class="column">
         <h3>Results!</h3>
-        <p> {{ response }} </p>
+
+        {% for phrase in response['p'] %}
+          <p>  {{ phrase }} </p>
+        {% endfor %}
+
+
+        <table>
+        {% for triple in response['q'] %}
+           <tr>
+             {% for col in triple %}
+                <td> {{ col }} </td>
+              {% endfor %}
+           </tr>
+        {% endfor %}
+        </table>
+        
       </div>
 
       <object type="text/html" data="query" onload="importHTML(this)"></object>

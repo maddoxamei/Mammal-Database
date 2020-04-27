@@ -18,6 +18,7 @@ namespaces = {
     "xml":rdflib.URIRef("http://www.w3.org/XML/1998/namespace#"),
     "m":rdflib.URIRef("http://www.semanticweb.org/ontologies/2020/2/Mammal#")
 }
+inv_namespaces = {v: k for k, v in namespaces.items()}
 
 g.bind('rdf', RDF)
 g.bind('rdfs', RDFS)
@@ -49,6 +50,13 @@ def getArguments(sub, pred, obj):
         o = rdflib.URIRef(namespaces[object[0]]+object[1])
     return s, p, o
 
+def generateString(list):
+    str = '<div>'
+    for phrase in list:
+        str += '<p>'+ phrase + '</p>'
+    str += '</div>'
+    return str
+
 @app.route("/")
 def index():
     return render_template('layout.html', response=response)
@@ -56,21 +64,36 @@ def index():
 @app.route("/query_page", methods=['POST'])
 def query():
     value = request.form.get('query_type')
-    print(value)
     s, p, o = getArguments(request.form.get('sub'), request.form.get('pred'), request.form.get('obj'))
+    print(value)
     if(value==None):
         response.update(p=["Error. Please select a query method."],q=[])
+        results = []
     elif(value=='generator'):
-        print(g.triples((s, p, o)))
-        response.update(p=[],q=list(g.triples((s, p, o))))
+        response.update(p=[],q=[])
+        results = list(g.triples((s, p, o)))
     else:
-        query = request.form.get('search');
-        response.update(p=[],q=list(g.query(query)))
+        response.update(p=[],q=[])
+        query = request.form.get('search')
+
+        results = list(g.query(query))
     #iter(graph)
     #graph.predicate_objects(subject)
     #graph.objects(subject, predicate)
     #graph.predicates(subject, object)
     #graph.subjects(predicate, object) #A generator of subjects with the given predicate and object
+    condensed = []
+    for triple in results:
+        triple_list = list(triple)
+        for i in range(len(triple_list)):
+            prefix = triple_list[i].split('#')
+            name = prefix[0]
+            if(rdflib.URIRef(str(prefix[0]+'#')) in namespaces.values()):
+                name = inv_namespaces[rdflib.URIRef(str(prefix[0]+'#'))]
+            triple_list[i] = ':'.join([name, prefix[-1]])
+        condensed.append(tuple(triple_list))
+
+    response.update(q=condensed)
     return render_template('layout.html', response=response)
 
 @app.route("/add_page", methods=['POST'])
