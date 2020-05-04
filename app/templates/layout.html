@@ -28,7 +28,7 @@
     <div class="two-column">
 
       <div id="query" class="column"></div>
-      <div id="results" class="column">
+      <div id="results" class="column" style="height:85%; overflow: scroll">
         <h3>Results!</h3>
 
         {% for phrase in response['p'] %}
@@ -45,7 +45,7 @@
            </tr>
         {% endfor %}
         </table>
-        
+
       </div>
 
       <object type="text/html" data="query" onload="importHTML(this)"></object>

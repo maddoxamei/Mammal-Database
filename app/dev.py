@@ -122,7 +122,7 @@ def remove():
         else:
             if(value=='Single'):
                 g.remove((s, p, o))
-                response.update(p = ["Removing: "+sub+" "+pred+" "+obj, "After the REMOVAL, there are {} triples in the graph.".format(len(g))], q=[])
+                response.update(p = ["Removing: "+s+" "+p+" "+o, "After the REMOVAL, there are {} triples in the graph.".format(len(g))], q=[])
             else:
                 response.update(p = ["Careful! The single option must be selected to remove a specific tripple"], q=[])
     return render_template('layout.html', response=response)

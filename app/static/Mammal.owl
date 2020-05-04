@@ -48,9 +48,7 @@
 
     <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Kingdom -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Kingdom">
-        <rdfs:comment>TODO: FINISH</rdfs:comment>
-    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Kingdom"/>
     
 
 
@@ -359,9 +357,7 @@
 
     <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Cosmopolitan -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cosmopolitan">
-        <rdfs:comment>Geographic Term: having a worldwide distribution. Found on all continents (except maybe Antarctica) and in all biogeographic provinces; or in all the major oceans (Atlantic, Indian, and Pacific.</rdfs:comment>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cosmopolitan"/>
     
 
 
@@ -417,12 +413,6 @@
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Aquatic">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Biome"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Terrestrial"/>
-        <rdfs:comment>pelagic
-reef
-lakes and ponds
-rivers and streams
-coastal
-brackish water</rdfs:comment>
     </owl:Class>
     
 
@@ -431,7 +421,7 @@ brackish water</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Artiodactyla">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Eutheria"/>
-        <rdfs:comment>(even-toed ungulates: antelope, deer, camels, pigs, cows, sheep, hippos, etc.)</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Even-toed ungulates</rdfs:comment>
     </owl:Class>
     
 
@@ -454,7 +444,7 @@ brackish water</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivora">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Eutheria"/>
-        <rdfs:comment>(carnivores: cats, bears [like the panda, polar bear, grizzly, etc.], weasels, pinnipeds, etc.)</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carnivore</rdfs:comment>
     </owl:Class>
     
 
@@ -463,7 +453,6 @@ brackish water</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cetacea">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Eutheria"/>
-        <rdfs:comment>(whales, dolphins)</rdfs:comment>
     </owl:Class>
     
 
@@ -472,7 +461,6 @@ brackish water</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Chiroptera">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Eutheria"/>
-        <rdfs:comment>(bats)</rdfs:comment>
     </owl:Class>
     
 
@@ -541,7 +529,6 @@ brackish water</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Hominodea">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Simiiformes"/>
-        <rdfs:comment>SuperFamily (Ape)</rdfs:comment>
     </owl:Class>
     
 
@@ -550,7 +537,6 @@ brackish water</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Hyracoidea">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Eutheria"/>
-        <rdfs:comment>(hyraxes)</rdfs:comment>
     </owl:Class>
     
 
@@ -567,7 +553,6 @@ brackish water</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Lagomorpha">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Eutheria"/>
-        <rdfs:comment>(rabbits, hares, pikas)</rdfs:comment>
     </owl:Class>
     
 
@@ -588,7 +573,6 @@ brackish water</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Macroscelidea">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Eutheria"/>
-        <rdfs:comment>(elephant shrews)</rdfs:comment>
     </owl:Class>
     
 
@@ -618,10 +602,6 @@ brackish water</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Monotremata">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Prototheria"/>
-        <rdfs:comment>(2 families of mammals that lay eggs with leathery shells and nourish the young with milk from belly pores: 
-
-Family Ornithorhynchidae, duck-billed platypus
-Family Tachyglossidae, spiny anteaters)</rdfs:comment>
     </owl:Class>
     
 
@@ -638,16 +618,7 @@ Family Tachyglossidae, spiny anteaters)</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Perissodactyla">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Eutheria"/>
-        <rdfs:comment>(odd-toed ungulates: horses, rhinos, tapirs)</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2020/2/Mammal#Pholidota -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Pholidota">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Eutheria"/>
-        <rdfs:comment>(the pangolin)</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Odd-toed ungulates</rdfs:comment>
     </owl:Class>
     
 
@@ -656,7 +627,6 @@ Family Tachyglossidae, spiny anteaters)</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Primates">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Eutheria"/>
-        <rdfs:comment>(apes, monkeys, lemurs, people)</rdfs:comment>
     </owl:Class>
     
 
@@ -665,7 +635,6 @@ Family Tachyglossidae, spiny anteaters)</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Proboscidea">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Eutheria"/>
-        <rdfs:comment>(elephants, mammoths, mastodonts, etc.)</rdfs:comment>
     </owl:Class>
     
 
@@ -691,7 +660,6 @@ Family Tachyglossidae, spiny anteaters)</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Rodentia">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Eutheria"/>
-        <rdfs:comment>(rodents: rats, mice, squirrels, gerbils, hamsters, etc.)</rdfs:comment>
     </owl:Class>
     
 
@@ -709,7 +677,6 @@ Family Tachyglossidae, spiny anteaters)</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Sirenia">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Eutheria"/>
-        <rdfs:comment>(sea cows (dugongs?), manatees)</rdfs:comment>
     </owl:Class>
     
 
@@ -742,16 +709,6 @@ Family Tachyglossidae, spiny anteaters)</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Terrestrial">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Biome"/>
-        <rdfs:comment>tundra
-taiga
-desert or dune
-savanna or grassland
-chaparral
-forest
-rainforest
-scrub forest
-mountains
-icecap</rdfs:comment>
     </owl:Class>
     
 
@@ -769,7 +726,6 @@ icecap</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Xenarthra">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Eutheria"/>
-        <rdfs:comment>(sloths, armadillos)</rdfs:comment>
     </owl:Class>
     
 
@@ -1121,7 +1077,7 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cursorial">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Locomotion"/>
-        <rdfs:comment>Having limbs adapted for running.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Limbs adapted for running</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1331,7 +1287,7 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Fossorial">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Locomotion"/>
-        <rdfs:comment>Having limbs adapted for burrowing.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Having limbs adapted for burrowing.</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1830,7 +1786,7 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Natatorial">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Locomotion"/>
-        <rdfs:comment>Having limbs adapted for swimming.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Having limbs adapted for swimming.</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -2106,7 +2062,7 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Saltatorial">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Locomotion"/>
-        <rdfs:comment>Having limbs adapted for leaping.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Having limbs adapted for leaping.</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -2123,7 +2079,7 @@ icecap</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Scansorial">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/2/Mammal#Locomotion"/>
-        <rdfs:comment>Having limbs adapted for climbing.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Having limbs adapted for climbing.</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -2539,50 +2495,11 @@ icecap</rdfs:comment>
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Locomotion">
-        <rdfs:comment>Terrestrial
-Arboreal
-Aerial
-Fossorial and subterranean
-Aquatic</rdfs:comment>
-    </rdf:Description>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
     // General axioms
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Artiodactyla"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Carnivora"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Cetacea"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Chiroptera"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Hyracoidea"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Insectivora"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Lagomorpha"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Macroscelidea"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Perissodactyla"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Pholidota"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Primates"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Proboscidea"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Rodentia"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Sirenia"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Tubulidentata"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2020/2/Mammal#Xenarthra"/>
-        </owl:members>
-    </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
